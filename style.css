@@ -2,8 +2,9 @@ header {
 	background-color: #1e76a8;
 }
 
-.nuosite {
+.sitename {
 	color: white;
+	font-size: 50;
 }
 
 a {
@@ -11,13 +12,16 @@ a {
 }
 
 .clicker {
-	background-color: #1e76a8;
+	background-color: greenyellow;
+}
+
+.clicker h1 {
+	text-align: center;
 }
 
 .click {
 	width: 400;
 	height: 400;
 
-	background-color: red;
-	margin: center;
+	background-color: orange;
 }
