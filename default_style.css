@@ -1,0 +1,23 @@
+header {
+	background-color:black;
+    padding-left: 10;
+}
+
+.nuosite-button {
+    background-color: black;
+    border-color: black;
+}
+
+.sitename {
+	color: lightblue;
+	font-size: 50;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+a {
+	text-decoration: none;
+}
+
+footer h2 {
+	text-align: right;
+}

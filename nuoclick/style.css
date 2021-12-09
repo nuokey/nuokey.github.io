@@ -1,0 +1,17 @@
+.clicker {
+	background-color: greenyellow;
+}
+
+.clicker h1 {
+	text-align: center;
+}
+
+.click {
+	width: 100%;
+	height: w;
+
+	background-color: blue;
+	font-size: 100;
+
+	border-radius: 1%;
+}
