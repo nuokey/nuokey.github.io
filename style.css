@@ -20,8 +20,9 @@ a {
 }
 
 .click {
-	width: 400;
-	height: 400;
+	width: 900;
+	height: 900;
 
 	background-color: orange;
+	font-size: 100;
 }
