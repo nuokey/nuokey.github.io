@@ -1,9 +1,9 @@
 header {
-	background-color: #1e76a8;
+	background-color:black;
 }
 
 .sitename {
-	color: white;
+	color: lightblue;
 	font-size: 50;
 }
 
@@ -20,9 +20,15 @@ a {
 }
 
 .click {
-	width: 900;
-	height: 900;
+	width: 100%;
+	height: w;
 
-	background-color: orange;
+	background-color: blue;
 	font-size: 100;
+
+	border-radius: 1%;
+}
+
+footer h2 {
+	text-align: right;
 }
