@@ -9,3 +9,15 @@ header {
 a {
 	text-decoration: none;
 }
+
+.clicker {
+	background-color: #1e76a8;
+}
+
+.click {
+	width: 400;
+	height: 400;
+
+	background-color: red;
+	margin: center;
+}
