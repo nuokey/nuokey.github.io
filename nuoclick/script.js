@@ -1,20 +1,21 @@
 let clickButton = document.querySelector('.click');
 
 clickButton.onclick = function() {
-    clicks = document.getElementById("clicks-clicked");
-    clicksPerClick = document.getElementById("clicks-per-click");
-    clicks.innerHTML = Number(clicks.textContent) + Number(clicksPerClick.textContent);
+    coins = document.getElementById("coins");
+    coinsPerClick = document.getElementById("coins-per-click");
+    finalCoins = Number(coins.textContent) + Number(coinsPerClick.textContent)
+    coins.innerHTML = finalCoins.toFixed(3);
 }
 
 let buyButton = document.querySelector('.buy')
 
 buyButton.onclick = function() {
-    clicks = document.getElementById("clicks-clicked");
+    clicks = document.getElementById("coins");
     upgradeCost = document.getElementById("upgrade-cost");
-    clicksPerClick = document.getElementById("clicks-per-click");
+    clicksPerClick = document.getElementById("coins-per-click");
     if (Number(clicks.textContent) >= Number(upgradeCost.textContent)) {
-        clicks.innerHTML = Number(clicks.textContent) - Number(upgradeCost.textContent);
-        clicksPerClick.innerHTML = Number(clicksPerClick.textContent) + 1;
+        clicks.innerHTML = (Number(clicks.textContent) - Number(upgradeCost.textContent)).toFixed(3);
+        clicksPerClick.innerHTML = Number(clicksPerClick.textContent) + 0.001;
         upgradeCost.innerHTML = Number(upgradeCost.textContent) * 2;
     }
 }
