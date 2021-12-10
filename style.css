@@ -1,3 +1,21 @@
+.clicker {
+	background-color: paleturquoise;
+	border-width: 1;
+}
+
+.clicker button{
+	width: 150;
+	height: 60;
+
+	border-width: 0;
+
+	background-color: #369e40;
+
+	font-size: 30;
+	margin-left: 20;
+	margin-bottom: 20;
+}
+
 .clicker a {
 	color: black;
 }
