@@ -1,5 +1,5 @@
 .clicker {
-	background-color: greenyellow;
+	background-color: white;
 }
 
 .clicker h1 {
@@ -18,4 +18,15 @@
 
 .shop h1 {
 	text-align: center;
+}
+
+.shop button {
+	width: 200;
+	height: 40;
+
+	font-size: 20;
+
+	background-color: orange;
+
+	border-width: 2;
 }
