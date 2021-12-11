@@ -1,4 +1,9 @@
-document.getElementById("coins").innerHTML = document.cookie;
+document.cookie = "coins=123"
+let indexCoins = document.cookie.indexOf("coins", 0) + 6;
+let indexSimbol = document.cookie.indexOf(";", indexCoins);
+let coins = document.cookie[indexCoins, indexSimbol];
+document.getElementById("coins").innerHTML = coins;
+
 let coinsPerClick = document.getElementById("coins-per-click");
 
 let clickButton = document.querySelector('.click');
