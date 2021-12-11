@@ -1,7 +1,7 @@
 let indexCoins = document.cookie.indexOf("coins:", 0) + 6;
 let indexSimbol = document.cookie.indexOf(";", indexCoins);
 if (indexSimbol == -1) {
-    let coins = document.cookie.slice(indexCoins, length(document.cookie) - 1);
+    let coins = document.cookie.slice(indexCoins);
 }
 else {
     let coins = document.cookie.slice(indexCoins, indexSimbol);
