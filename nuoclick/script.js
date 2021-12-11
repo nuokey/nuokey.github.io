@@ -1,4 +1,4 @@
-document.cookie = "user=John; max-age=0"
+document.cookie = "coins-per-click=0.001"
 /* let indexCoins = document.cookie.indexOf("coins", 0) + 6;
 let indexSimbol = document.cookie.indexOf(";", indexCoins);
 if (indexSimbol == -1) {
@@ -7,7 +7,7 @@ if (indexSimbol == -1) {
 else {
     let coins = document.cookie[indexCoins, indexSimbol];
 }*/
-document.getElementById("coins").innerHTML = document.cookie;
+document.getElementById("coins").innerHTML = document.cookie.slice(6, document.cookie.indexOf(";", 0)));
 
 let coinsPerClick = document.getElementById("coins-per-click");
 
