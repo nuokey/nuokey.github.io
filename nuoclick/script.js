@@ -1,5 +1,5 @@
-document.cookie = "user=Timo";
-alert(document.cookie);
+document.getElementById("coins").innerHTML = document.cookie;
+let coinsPerClick = document.getElementById("coins-per-click");
 
 let clickButton = document.querySelector('.click');
 
