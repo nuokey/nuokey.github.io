@@ -43,3 +43,8 @@ div {
 
 	margin-bottom: 10;
 }
+
+.delete {
+	width: 200;
+	height: 40;
+}
