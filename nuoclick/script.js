@@ -18,7 +18,6 @@ clickButton.onclick = function() {
     let finalCoins = Number(coins.textContent) + Number(coinsPerClick.textContent)
     coins.innerHTML = finalCoins.toFixed(3);
     document.cookie = "coins=" + finalCoins.toFixed(3);
-    alert("coins=" + finalCoins.toFixed(3));
 }
 
 let buyButton = document.querySelector('.buy');
