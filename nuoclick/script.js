@@ -1,4 +1,3 @@
-document.cookie = "coins-per-click=0.001"
 /* let indexCoins = document.cookie.indexOf("coins", 0) + 6;
 let indexSimbol = document.cookie.indexOf(";", indexCoins);
 if (indexSimbol == -1) {
