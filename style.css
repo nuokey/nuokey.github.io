@@ -1,6 +1,11 @@
 .clicker {
 	background-color: paleturquoise;
 	border-width: 1;
+
+	margin-left: 20;
+	margin-right: 20;
+
+	color: black;
 }
 
 .clicker button{

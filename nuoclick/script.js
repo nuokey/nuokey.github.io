@@ -1,3 +1,6 @@
+document.cookie = encodeURIComponent("user") + "=" + encodeURIComponent("John");
+document.getElementById("coins").innerHTML = document.cookie;
+
 let clickButton = document.querySelector('.click');
 
 clickButton.onclick = function() {
@@ -10,12 +13,12 @@ clickButton.onclick = function() {
 let buyButton = document.querySelector('.buy')
 
 buyButton.onclick = function() {
-    clicks = document.getElementById("coins");
+    coins = document.getElementById("coins");
     upgradeCost = document.getElementById("upgrade-cost");
-    clicksPerClick = document.getElementById("coins-per-click");
-    if (Number(clicks.textContent) >= Number(upgradeCost.textContent)) {
-        clicks.innerHTML = (Number(clicks.textContent) - Number(upgradeCost.textContent)).toFixed(3);
-        clicksPerClick.innerHTML = Number(clicksPerClick.textContent) + 0.001;
+    coinsPerClick = document.getElementById("coins-per-click");
+    if (Number(coins.textContent) >= Number(upgradeCost.textContent)) {
+        coins.innerHTML = (Number(coins.textContent) - Number(upgradeCost.textContent)).toFixed(3);
+        coinsPerClick.innerHTML = Number(coinsPerClick.textContent) + 0.001;
         upgradeCost.innerHTML = Number(upgradeCost.textContent) * 2;
     }
 }

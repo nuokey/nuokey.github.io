@@ -2,6 +2,9 @@ div {
 	display: inline-block;
 	padding: 30;
 	vertical-align: top;
+
+	background-color: lightslategray;
+	border-radius: 5%;
 }
 
 .clicker h1 {
@@ -19,7 +22,8 @@ div {
 	background-color: #2ab088;
 	font-size: 100;
 
-	border-radius: 1%;
+	border-radius: 100%;
+	border-width: 5;
 }
 
 .shop h1 {
