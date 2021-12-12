@@ -1,12 +1,12 @@
 let indexCoins = document.cookie.indexOf("coins=", 0);
 let indexSimbol = document.cookie.indexOf(";", indexCoins);
 if (indexSimbol == -1) {
-    let coins = document.cookie.slice(indexCoins);
+    let coinsLoaded = document.cookie.slice(indexCoins);
 }
 else {
-    let coins = document.cookie.slice(indexCoins, indexSimbol);
+    let coinsLoaded = document.cookie.slice(indexCoins, indexSimbol);
 }
-document.getElementById("coins").innerHTML = coins;
+document.getElementById("coins").innerHTML = coinsLoaded;
 
 let coinsPerClick = document.getElementById("coins-per-click");
 
