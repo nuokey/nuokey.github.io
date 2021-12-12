@@ -2,9 +2,11 @@ let indexCoins = document.cookie.indexOf("coins=", 0);
 let indexSimbol = document.cookie.indexOf(";", indexCoins);
 if (indexSimbol == -1) {
     let coinsLoaded = document.cookie.slice(indexCoins);
+    alert(coinsLoaded+"sdasdfsadfsdf");
 }
 else {
     let coinsLoaded = document.cookie.slice(indexCoins, indexSimbol);
+    alert(coinsLoaded);
 }
 document.getElementById("coins").innerHTML = coinsLoaded;
 
