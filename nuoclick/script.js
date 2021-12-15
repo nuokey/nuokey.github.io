@@ -7,7 +7,7 @@ else {
     let coinsLoaded = document.cookie.slice(indexCoins, indexSimbol);
 }
 document.getElementById("coins").innerHTML = coinsLoaded;
-alert(document.cookie)
+alert(document.cookie);
 
 let coinsPerClick = document.getElementById("coins-per-click");
 
