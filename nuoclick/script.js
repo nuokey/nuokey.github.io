@@ -16,7 +16,7 @@ let clickButton = document.querySelector('.click');
 clickButton.onclick = function() {
     let coins = document.getElementById("coins");
     let coinsPerClick = document.getElementById("coins-per-click");
-    let finalCoins = Number(coins.textContent) + Number(coinsPerClick.textContent)
+    let finalCoins = Number(coins.textContent) + Number(coinsPerClick.textContent);
     coins.innerHTML = finalCoins.toFixed(3);
     // document.cookie = "coins=" + finalCoins.toFixed(3);
 }
@@ -36,9 +36,9 @@ buyButton.onclick = function() {
     }
 }
 
-let deleteButton = document.querySelector(".delete");
+// let deleteButton = document.querySelector(".delete");
 
-deleteButton.onclick = function() {
+// deleteButton.onclick = function() {
     // document.cookie = "coins=0; coins-per-click=0.001"
-    location.reload()
+    // location.reload()
 }
