@@ -1,11 +1,11 @@
 let indexCoins = document.cookie.indexOf("coins=", 0);
 let indexSimbol = document.cookie.indexOf(";", indexCoins);
-let coinsLoaded = 0;
+let coinsLoaded = "Coins haven't been loaded";
 if (indexSimbol == -1) {
-    let coinsLoaded = document.cookie.slice(indexCoins);
+    coinsLoaded = document.cookie.slice(indexCoins);
 }
 else {
-    let coinsLoaded = document.cookie.slice(indexCoins, indexSimbol);
+    coinsLoaded = document.cookie.slice(indexCoins, indexSimbol);
 }
 document.getElementById("coins").innerHTML = coinsLoaded;
 alert(document.cookie);
