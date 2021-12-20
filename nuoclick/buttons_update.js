@@ -25,9 +25,9 @@ buyButton.onclick = function() {
     }
 }
 
-// let deleteButton = document.querySelector(".delete");
+let deleteButton = document.querySelector(".delete");
 
-// deleteButton.onclick = function() {
-    // document.cookie = "coins=0; coins-per-click=0.001"
-    // location.reload()
-// }
+deleteButton.onclick = function() {
+    document.cookie = "coins=0; coins-per-click=0.001"
+    location.reload()
+}
