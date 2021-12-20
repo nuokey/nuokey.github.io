@@ -8,4 +8,3 @@ else {
     coinsLoaded = document.cookie.slice(indexCoins, indexSimbol);
 }
 document.getElementById("coins").innerHTML = coinsLoaded;
-alert(document.cookie);
