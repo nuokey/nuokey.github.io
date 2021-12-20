@@ -41,4 +41,4 @@ buyButton.onclick = function() {
 // deleteButton.onclick = function() {
     // document.cookie = "coins=0; coins-per-click=0.001"
     // location.reload()
-}
+// }
