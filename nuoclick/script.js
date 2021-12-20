@@ -1,5 +1,6 @@
 let indexCoins = document.cookie.indexOf("coins=", 0);
 let indexSimbol = document.cookie.indexOf(";", indexCoins);
+let coinsLoaded = 0;
 if (indexSimbol == -1) {
     let coinsLoaded = document.cookie.slice(indexCoins);
 }
