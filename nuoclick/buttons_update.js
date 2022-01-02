@@ -29,6 +29,7 @@ buyButton.onclick = function() {
 let deleteButton = document.querySelector(".delete");
 
 deleteButton.onclick = function() {
-    document.cookie = "coins=0; coins-per-click=0.001"
+    document.cookie = "coins=0" + "; expires=Tue, 19 Jan 2038 03:14:07 GMT"
+    document.cookie = "coins-per-click=0.001" + "; expires=Tue, 19 Jan 2038 03:14:07 GMT"
     location.reload()
 }
