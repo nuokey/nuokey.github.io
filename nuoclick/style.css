@@ -1,10 +1,23 @@
-div {
-	display: inline-block;
+main {
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+}
+
+.main {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+
+div div {
 	padding: 30;
 	vertical-align: top;
 
-	background-color: lightslategray;
-	border-radius: 5%;
+	background-color: black;
+	margin: 10;
+}
+
+button {
+	margin: 10;
 }
 
 .clicker h1 {
@@ -16,13 +29,9 @@ div {
 }
 
 .click {
-	width: 1000;
-	height: 1000;
-
 	background-color: #2ab088;
 	font-size: 100;
 
-	border-radius: 100%;
 	border-width: 5;
 }
 
@@ -38,7 +47,6 @@ div {
 
 	background-color: orange;
 
-	border-width: 2;
 	border-color: white;
 
 	margin-bottom: 10;

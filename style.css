@@ -6,10 +6,12 @@
 	margin-right: 20;
 
 	color: black;
+
+	padding-left: 5;
 }
 
 .clicker button{
-	width: 150;
+	width: 200;
 	height: 60;
 
 	border-width: 0;
