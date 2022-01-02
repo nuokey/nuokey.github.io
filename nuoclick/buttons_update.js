@@ -21,7 +21,8 @@ buyButton.onclick = function() {
         coinsPerClick.innerHTML = Number(coinsPerClick.textContent) + 0.001;
         upgradeCost.innerHTML = Number(upgradeCost.textContent) * 2;
 
-        document.cookie = "coins=" + ((Number(coins.textContent) - Number(upgradeCost.textContent)).toFixed(3)) + "; coins-per-click=" + (Number(coinsPerClick.textContent) + 0.001);
+        document.cookie = "coins=" + ((Number(coins.textContent) - Number(upgradeCost.textContent)).toFixed(3)) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT";
+        document.cookie = "coins-per-click=" + (Number(coinsPerClick.textContent) + 0.001) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT"
     }
 }
 
