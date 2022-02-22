@@ -4,115 +4,43 @@
 	}
 }
 
-@keyframes description {
-	to {
-		display: block;
-	}
-}
-
-body {
-	background-color: #F0F0F0;
-	color: black;
-
-	margin-top: 0;
-	margin-left: 0;
-	margin-bottom: 0;
-	margin-right: 0;
-}
-
-header {
-	display: inline-flex;
-	background-color:#000000;
-    padding: 5;
-	width: 100%;
-}
-
-.nuosite-button {
-    background-color: #000000;
-	border-width: 0;
-}
-
-.sitename {
-	color: #E55315;
-	font-size: 40;
-
-	margin: 5;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-footer h2 {
-	text-align: right;
-}
-
 main {  display: grid;
-	grid-template-columns: 1fr 3fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	gap: 0px 0px;
-	grid-auto-flow: row;
-	grid-template-areas:
-	  "downloads news ."
-	  ". news .";
-}
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "download main ."
+      "download main ."
+      "download main .";
+  }
+  
+  .main { grid-area: main; }
+  
+  .download { grid-area: download; }
+  
 
-.news {
-	grid-area: news;
-}
-
-.downloads {
-	grid-area: downloads;
-}
-
-.news {
-	background-color: white;
-	margin: 5px;
+.download {
+    background-color: white;
+    margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
 }
 
-div h1 {
-	text-align: center;
-}
-
-.news ul {
-	list-style: none;
-}
-
-.versions {
-	background-color: #f0f0f0;
-	margin: 5px;
-	padding-left: 5px;
-	padding-bottom: 1px;
-	border-radius: 5px;
-}
-
-/* .version:not(:hover) .description {
-	display: none;
-} */
-
-/* .version:hover .description {
-	animation-name: description;
-	animation-duration: 500ms;
-	animation-fill-mode: forwards;
-	display: block;
-} */
-
-.news a {
-	font-size: 20;
-}
-
-.news button {
+.download button {
 	width: 120px;
 	height: 35px;
 	border: 2px solid #4CAF50;
 	border-radius: 5px;
+    background-color: white;
 }
 
-.news button:hover {
+.download button:hover {
 	animation-name: download;
 	animation-duration: 300ms;
 	animation-fill-mode: forwards;
+}
+
+.download a {
+	font-size: 20;
 }

@@ -1,0 +1,47 @@
+body {
+	background-color: #F0F0F0;
+	color: black;
+
+	margin-top: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+}
+
+.main {
+	background-color: white;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+header {
+	display: inline-flex;
+	background-color:#000000;
+    padding: 5;
+	width: 100%;
+}
+
+.spectrum_logo {
+	height: 50px;
+
+	margin-left: 3px;
+	margin-top: 1px;
+}
+
+header button {
+	background-color: #000000;
+	border-width: 0px;
+
+	margin-left: 20px;
+}
+
+header a {
+	color: white;
+	font-size: 30;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
