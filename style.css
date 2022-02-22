@@ -44,3 +44,7 @@ main {  display: grid;
 .download a {
 	font-size: 20;
 }
+
+.developing {
+    color: gray;
+}
