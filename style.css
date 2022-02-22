@@ -20,14 +20,14 @@ main {  display: grid;
   .download { grid-area: download; }
   
 
-.download {
+.download div {
     background-color: white;
     margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
 }
 
-.download button {
+.download div button {
 	width: 120px;
 	height: 35px;
 	border: 2px solid #4CAF50;
@@ -35,16 +35,16 @@ main {  display: grid;
     background-color: white;
 }
 
-.download button:hover {
+.download div button:hover {
 	animation-name: download;
 	animation-duration: 300ms;
 	animation-fill-mode: forwards;
 }
 
-.download a {
+.download div a {
 	font-size: 20;
 }
 
-.developing {
+.developing div {
     color: gray;
 }
