@@ -3,7 +3,7 @@ body {
 }
 
 canvas {
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .snakecontrol {  display: grid;
@@ -28,9 +28,11 @@ canvas {
 .snakecontrol {
     height: 25%;
     border: 1px solid black;
+
+    display: none;
 }
 
-.snakecontrol button {
+.snakecontrol input {
     background-color: white;
     border: 1px solid black;
     width: 100%;
