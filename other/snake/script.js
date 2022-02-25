@@ -7,7 +7,7 @@ let canvas = document.getElementById('canvas');
 // let up = document.getElementById('up');
 
 canvas.width = screen.width;
-canvas.height = screen.height * 0.8;
+canvas.height = screen.height;
 
 let speedx = 1;
 let speedy = 0;
