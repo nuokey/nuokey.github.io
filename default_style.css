@@ -1,3 +1,9 @@
+@keyframes download-page {
+	to {
+		color:lightgray;
+	}
+}
+
 body {
 	background-color: #F0F0F0;
 	color: black;
@@ -34,11 +40,14 @@ header button {
 	border-width: 0px;
 
 	margin-left: 20px;
-}
-
-header a {
 	color: white;
 	font-size: 30;
+}
+
+header button:hover {
+	animation-name: download-page;
+	animation-duration: 250ms;
+	animation-fill-mode: forwards;
 }
 
 a {
@@ -48,4 +57,8 @@ a {
 
 footer h2 {
 	text-align: right;
+}
+
+button {
+	cursor: pointer;
 }
