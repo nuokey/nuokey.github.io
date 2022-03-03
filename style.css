@@ -1,6 +1,7 @@
 @keyframes download {
 	to {
-		background-color: #4CAF50;
+		background-color: #5DD9EF;
+        color: black;
 	}
 }
 
@@ -27,19 +28,22 @@ main {  display: grid;
   
 
 .download div {
-    background-color: white;
+    background-color: #08000C;
     margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
+    border: 1px solid white;
 }
 
 .download div button {
 	width: 120px;
 	height: 35px;
-	border: 2px solid #4CAF50;
+	border: 2px solid #5DD9EF;
 	border-radius: 5px;
     background-color: white;
     font-size: 20;
+    background-color: #08000C;
+    color: #5DD9EF;
 }
 
 .download div button:hover {

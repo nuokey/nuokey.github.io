@@ -6,7 +6,8 @@
 
 body {
 	background-color: #08000C;
-	color: black;
+	color: #5DD9EF;
+	font-family: 'Times New Roman', Times, serif;
 
 	margin-top: 0;
 	margin-left: 0;
@@ -15,15 +16,15 @@ body {
 }
 
 .main {
-	background-color: #202021;
 	margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
+	border: 1px solid white;
 }
 
 header {
 	display: inline-flex;
-	background-color:#000000;
+	background-color:#202021;
     padding: 5;
 	width: 100%;
 }
@@ -36,7 +37,7 @@ header {
 }
 
 header button {
-	background-color: #000000;
+	background-color: #202021;
 	border-width: 0px;
 
 	margin-left: 20px;
@@ -52,7 +53,7 @@ header button:hover {
 
 a {
 	text-decoration: none;
-	color: black;
+	color: #5DD9EF;
 }
 
 footer h2 {
