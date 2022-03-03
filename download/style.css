@@ -1,6 +1,7 @@
 @keyframes download {
 	to {
-		background-color: #4CAF50;
+		background-color: #5DD9EF;
+		color: black;
 	}
 }
 
@@ -60,9 +61,12 @@ div h1 {
 .main button {
 	width: 120px;
 	height: 35px;
-	border: 2px solid #4CAF50;
+	border: 2px solid #5DD9EF;
 	border-radius: 5px;
-	font-size: 20;
+    background-color: white;
+    font-size: 20;
+    background-color: #08000C;
+    color: #5DD9EF;
 }
 
 .main button:hover {
