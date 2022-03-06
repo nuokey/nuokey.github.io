@@ -20,25 +20,31 @@ header {
 	display: inline-flex;
 	background-color:#202021;
 	width: 100%;
+	height: 50px;
 
 	justify-content: space-between;
 	align-items: center;
 }
 
 header ul {
-	margin-right: 100px;
+	margin-right: 10px;
 	text-decoration: none;
 
 	list-style: none;
 }
 
 header li {
+	display: inline;
+}
+
+header li button {
+	font-size: 22;
 }
 
 .spectrum_logo {
-	height: 50px;
+	height: 35px;
 
-	margin-left: 3px;
+	margin-left: 20px;
 	margin-top: 1px;
 }
 
