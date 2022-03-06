@@ -8,5 +8,4 @@ downloadPage = document.getElementById("download-page");
 
 downloadPage.onclick = function() {
     window.location.href = "download/"
-    alert("ahah")
 }
