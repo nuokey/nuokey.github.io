@@ -1,13 +1,7 @@
-@keyframes download-page {
-	to {
-		color:lightgray;
-	}
-}
-
 body {
 	background-color: #08000C;
-	color: #5DD9EF;
-	font-family: 'Times New Roman', Times, serif;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
 
 	margin-top: 0;
 	margin-left: 0;
@@ -19,14 +13,26 @@ body {
 	margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
-	border: 1px solid white;
+	border: 1px solid grey;
 }
 
 header {
 	display: inline-flex;
 	background-color:#202021;
-    padding: 5;
 	width: 100%;
+
+	justify-content: space-between;
+	align-items: center;
+}
+
+header ul {
+	margin-right: 100px;
+	text-decoration: none;
+
+	list-style: none;
+}
+
+header li {
 }
 
 .spectrum_logo {
@@ -41,14 +47,13 @@ header button {
 	border-width: 0px;
 
 	margin-left: 20px;
-	color: white;
+	color: #5DD9EF;
 	font-size: 30;
 }
 
 header button:hover {
-	animation-name: download-page;
-	animation-duration: 250ms;
-	animation-fill-mode: forwards;
+	color: white;
+	transition-duration: 300ms;
 }
 
 a {

@@ -32,7 +32,7 @@ main {  display: grid;
     margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
-    border: 1px solid white;
+    border: 1px solid grey;
 }
 
 .download div button {
@@ -47,13 +47,16 @@ main {  display: grid;
 }
 
 .download div button:hover {
-	animation-name: download;
+    background-color: #5DD9EF;
+    color: black;
+    transition-duration: 300ms;
+	/* animation-name: download;
 	animation-duration: 300ms;
-	animation-fill-mode: forwards;
+	animation-fill-mode: forwards; */
 }
 
 .developing {
-    color: gray;
+    color: lightgray;
 }
 
 .other-link:hover {
