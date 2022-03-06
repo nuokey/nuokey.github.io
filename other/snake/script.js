@@ -6,8 +6,8 @@ let apple = [30, 30]
 let canvas = document.getElementById('canvas');
 // let up = document.getElementById('up');
 
-canvas.width = screen.width;
-canvas.height = screen.height;
+canvas.width = screen.width * 0.7;
+canvas.height = screen.height * 0.7;
 
 let speedx = 1;
 let speedy = 0;
