@@ -1,9 +1,17 @@
+.download-menu {
+    background-color: whitesmoke;
+}
+
 .download-menu div {
     display: none;
+    
+    background-color: whitesmoke;
+    position: absolute;
 }
 
 .download-menu:hover div {
     display: block;
+    min-width: 300px;
 }
 
 div button {

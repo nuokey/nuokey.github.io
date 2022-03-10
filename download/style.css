@@ -67,3 +67,7 @@ div h1 {
 	color: black;
 	transition-duration: 300ms;
 }
+
+.version h4 {
+	color: gray;
+}
