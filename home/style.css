@@ -28,7 +28,7 @@ main {  display: grid;
   
 
 .download div {
-    background-color: #08000C;
+    /* background-color: #08000C; */
     margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
@@ -42,13 +42,13 @@ main {  display: grid;
 	border-radius: 5px;
     background-color: white;
     font-size: 20;
-    background-color: #08000C;
+    /* background-color: #08000C; */
     color: #5DD9EF;
 }
 
 .download div button:hover {
     background-color: #5DD9EF;
-    color: black;
+    /* color: black; */
     transition-duration: 300ms;
 	/* animation-name: download;
 	animation-duration: 300ms;
