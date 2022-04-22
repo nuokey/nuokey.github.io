@@ -1,0 +1,18 @@
+header {
+    background-color: #202021;
+}
+
+body {
+    background-color: #08000C;
+    color: white;
+}
+
+button {
+    background-color: #08000C;
+    color: #5DD9EF;
+    border-color: #08000C;
+}
+
+header button {
+    background-color: #202021;
+}

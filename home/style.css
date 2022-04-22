@@ -38,16 +38,16 @@ main {  display: grid;
 .download div button {
 	width: 120px;
 	height: 35px;
-	border: 2px solid #5DD9EF;
+	/* border: 2px solid #5DD9EF; */
 	border-radius: 5px;
     background-color: white;
     font-size: 20;
     /* background-color: #08000C; */
-    color: #5DD9EF;
+    /* color: #5DD9EF; */
 }
 
 .download div button:hover {
-    background-color: #5DD9EF;
+    /* background-color: #5DD9EF; */
     /* color: black; */
     transition-duration: 300ms;
 	/* animation-name: download;
