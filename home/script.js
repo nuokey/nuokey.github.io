@@ -1,23 +1,38 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-const title = document.getElementById("title");
+const massText = document.getElementById("mass");
 
-const score = document.getElementById("score");
 
 const neutronsText = document.getElementById("neutrons");
+const neutronColor = "#6CF46C";
+neutronsText.style.color = neutronColor;
+
 const protonsText = document.getElementById("protons");
+const protonColor = "#F17865";
+protonsText.style.color = protonColor;
+
 const electronsText = document.getElementById("electrons");
+const electronColor = "#6CE1F4";
+electronsText.style.color = electronColor;
 
 
 const hidrogenText = document.getElementById("hidrogen");
+const hidrogenColor = "#FFFFFF";
 const deuteriumText = document.getElementById("deuterium");
 const tritiumText = document.getElementById("tritium");
+hidrogenText.style.color = hidrogenColor;
+deuteriumText.style.color = hidrogenColor;
+tritiumText.style.color = hidrogenColor;
 
+// const helium-3 = 
 const heliumText = document.getElementById("helium");
+const heliumColor = "#F4C271";
+heliumText.style.color = heliumColor;
 
 const berylliumText = document.getElementById("beryllium");
-
+const berylliumColor = "#6CABF4";
+berylliumText.style.color = berylliumColor;
 
 let neutrons = 0;
 let protons = 0;
@@ -47,7 +62,12 @@ let startParticles = 1000;
 
 let bigBang = true;
 
+let mouseGravity;
 
+let x;
+let y;
+
+let mass = 0;
 
 // Характеристики частицы:
     // 0, 1 - координаты
@@ -71,7 +91,7 @@ class Create {
         particles.push([x, y, speedX, speedY, 1, 0, 1000000, 1]);
     }
     electron(x, y, speedX, speedY) {
-        particles.push([x, y, speedX, speedY, -1, 0, 1000000, 0.0005]);
+        particles.push([x, y, speedX, speedY, -1, 0, 1000000, 0]);
     }
 
     atom(x, y, speedX, speedY, mass, protons) {
@@ -139,6 +159,8 @@ function draw() {
 
     beryllium = 0;
 
+    mass = 0;
+
     particlesMovement();
     atomsMovement();
 
@@ -150,22 +172,24 @@ function draw() {
     deuteriumText.innerHTML = `Deuterium: ${deuterium}`;
     tritiumText.innerHTML = `Tritium: ${tritium}`;
 
-    heliumText.innerHTML = `Helium: ${helium}`
+    heliumText.innerHTML = `Helium: ${helium}`;
 
-    berylliumText.innerHTML = `Beryllium: ${beryllium}`
+    berylliumText.innerHTML = `Beryllium: ${beryllium}`;
+
+    massText.innerHTML = `Mass: ${mass}`;
 }
 
 function particlesMovement() {
     particles.forEach(e => {
         e[5] += 1;
         if (e[4] == 0) {
-            ctx.fillStyle = "green";
+            ctx.fillStyle = neutronColor;
         }
         else if (e[4] == 1) {
-            ctx.fillStyle = "#CD1D1D";
+            ctx.fillStyle = protonColor;
         }
         else if (e[4] == -1) {
-            ctx.fillStyle = "blue";
+            ctx.fillStyle = electronColor;
         }
         ctx.fillRect(e[0], e[1], 2, 2);
         e[0] += e[2];
@@ -185,8 +209,8 @@ function particlesMovement() {
         }
 
         if (e[4] == 0 && e[5] >= e[6]) {
-            create.proton(e[0] + 5, e[1], e[2], e[3])
-            create.electron(e[0], e[1], -e[2], -e[3])
+            create.proton(e[0] + 5, e[1], e[2], e[3]);
+            create.electron(e[0], e[1], -e[2], -e[3]);
             deleteObject.particle(e);
         }
 
@@ -200,32 +224,35 @@ function particlesMovement() {
             electrons += 1;
         }
 
-        particles.forEach(object => {
-                distance = Math.sqrt((object[0] - e[0])**2 + (object[1] - e[1])**2);
-                // Кулоновское взаимодействие
-                if (distance >= 3 && ((e[4] == 1 && object[4] == -1) || (e[4] == -1 && object[4] == 1))) {
-                    force = 1 / distance
+        mass += e[7];
 
-                    sin = (e[1] - object[1]) / distance;
-                    cos = (e[0] - object[0]) / distance;
-                    e[3] -= sin * force;
-                    e[2] -= cos * force;
-                }
-                if (distance < 5 && distance != 0 && ((e[4] == 1 && object[4] == -1) || (e[4] == -1 && object[4] == 1))) {
-                    create.atom(e[0], e[1], e[2], e[3], 1, 1);
-                    deleteObject.particle(object);
-                    deleteObject.particle(e);
-                }
-                else if (distance == 0 && time == 1) {
-                    e[3] += getRandomArbitrary(-0.25, 0.25);
-                    e[2] += getRandomArbitrary(-0.25, 0.25);
-                }
+        particles.forEach(object => {
+            distance = Math.sqrt((object[0] - e[0])**2 + (object[1] - e[1])**2);
+            // Кулоновское взаимодействие
+            if (distance >= 1) {
+                force = 10 * -e[4] * object[4] / (distance ** 2);
+
+                sin = (e[1] - object[1]) / distance;
+                cos = (e[0] - object[0]) / distance;
+                e[3] -= sin * force;
+                e[2] -= cos * force;
+            }
+
+            if (distance < 5 && distance != 0 && ((e[4] == 1 && object[4] == -1) || (e[4] == -1 && object[4] == 1))) {
+                create.atom(e[0], e[1], e[2], e[3], 1, 1);
+                deleteObject.particle(object);
+                deleteObject.particle(e);
+            }
+            else if (distance == 0 && time == 1) {
+                e[3] += getRandomArbitrary(-0.25, 0.25);
+                e[2] += getRandomArbitrary(-0.25, 0.25);
+            }
         });
 
         // Появление дейтерия и трития
         atoms.forEach(atom => {
             distance = Math.sqrt((atom[0] - e[0])**2 + (atom[1] - e[1])**2);
-            if (distance <= 1 && atom[5] == 1 && atom[4] < 3 && e[4] == 0 && Math.sqrt(e[2]**2 + e[3]**2) >= 5) {
+            if (distance <= 1 && atom[5] == 1 && atom[4] < 3 && e[4] == 0 && Math.abs(e[2]**2 + e[3]**2) >= 2) {
                 atom[4] += e[7];
                 particles.splice(particles.indexOf(e), 1);
 
@@ -240,15 +267,18 @@ function particlesMovement() {
 function atomsMovement() {
     atoms.forEach(e => {
         if (e[5] == 1) {
-            ctx.fillStyle = "white";
+            ctx.fillStyle = hidrogenColor;
         }
         else if (e[5] == 2) {
-            ctx.fillStyle = "orange";
+            ctx.fillStyle = heliumColor;
         }
         else if (e[5] == 4) {
-            ctx.fillStyle = "blue";
+            ctx.fillStyle = berylliumColor;
         }
-        // ctx.fillRect(e[0], e[1], e[4] * 2, e[4] * 2);
+
+        hidrogenText.style.color = '#FFFFFF';
+        heliumText.style.color = '#F4C271';
+        
         ctx.beginPath();
         ctx.arc(e[0], e[1], e[4], 0, 2 * Math.PI, false);
         ctx.fill();
@@ -287,9 +317,11 @@ function atomsMovement() {
             beryllium += 1;
         }
 
+        mass += e[4];
+
         atoms.forEach(object => {
             distance = Math.sqrt((object[0] - e[0])**2 + (object[1] - e[1])**2);
-            if (distance >= 2) {
+            if (distance > 20) {
                 // Гравитационное взаимодействие
 
                 force = 1 / (distance ** 2)
@@ -299,28 +331,43 @@ function atomsMovement() {
                 e[3] -= sin * force;
                 e[2] -= cos * force;
             }
-            // Термоядерный синтез
-            if (distance < 3 && e[5] == object[5] == 1 && e[4] == 3 && object[4] == 2) {
-                create.atom(e[0], e[1], e[2], e[3], 4, 2);
+            if (distance <= 20 && distance > 2) {
+                force = 1 / (distance ** 2)
+
+                sin = (e[1] - object[1]) / distance;
+                cos = (e[0] - object[0]) / distance;
+                e[3] += sin * force;
+                e[2] += cos * force;
+            }
+
+            // Синтез гелия-3
+            if (distance < 2 && e[5] == 1 && object[5] == 1 && e[4] == 2 && object[4] == 1 && e != object) {
+                create.atom((e[0] + object[0])/2, (e[1] + object[1])/2, e[2] + object[2], e[3] + object[3], 3, 2);
+                deleteObject.atom(e);
+                deleteObject.atom(object);
+            }
+            // Синтез гелия
+            if (distance < 2 && e[5] == object[5] == 1 && e[4] == 3 && object[4] == 2) {
+                create.atom((e[0] + object[0])/2, (e[1] + object[1])/2, e[2] + object[2], e[3] + object[3], 4, 2);
                 create.neutron(e[0], e[1], getRandomArbitrary(-e[2], e[2]), getRandomArbitrary(-e[3], e[3]));
                 deleteObject.atom(e);
                 deleteObject.atom(object);
             }
-            // Синтез бериллия
-            if (distance < 3 && e[5] == 2 && object[5] == 2 && e[4] == 4 && object[4] == 4 && e != object) {
-                create.atom(e[0], e[1], e[2], e[3], 8, 4);
+            // Синтез бериллия-7
+            if (distance < 2 && e[5] == 2 && object[5] == 2 && e[4] == 3 && object[4] == 4 && e != object) {
+                create.atom((e[0] + object[0])/2, (e[1] + object[1])/2, e[2] + object[2], e[3] + object[3], 7, 4);
                 deleteObject.atom(e);
                 deleteObject.atom(object);
-                console.log("aaaa")
+            }
+            // Синтез бериллия
+            if (distance < 2 && e[5] == 2 && object[5] == 2 && e[4] == 4 && object[4] == 4 && e != object) {
+                create.atom((e[0] + object[0])/2, (e[1] + object[1])/2, e[2] + object[2], e[3] + object[3], 8, 4);
+                deleteObject.atom(e);
+                deleteObject.atom(object);
             }
         });
     });
 }
-
-canvas.addEventListener('mousemove', function (e) {
-    y1 = e.pageY - e.target.offsetTop;
-    // y2 = y1;
-})
 
 document.addEventListener('keydown', function (event) {
     if (event.key == "p") {
@@ -331,18 +378,27 @@ document.addEventListener('keydown', function (event) {
             maxFps = -1;
         }
     }
+    else if (event.key == 'i') {
+        particles.forEach(e => {
+            e[2] *= -1;
+            e[3] *= -1;
+        });
+    }
 })
 
-function getCursorPosition(canvas, event) {
+canvas.addEventListener('mousemove', function(event) {
     const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    console.log("x: " + x + " y: " + y);
-    create.neutron(x, y, getRandomArbitrary(-2, 2), getRandomArbitrary(-2, 2));
-}
+    x = event.clientX - rect.left;
+    y = event.clientY - rect.top;
+})
 
-canvas.addEventListener('mousedown', function(e) {
-    getCursorPosition(canvas, e);
+canvas.addEventListener('mousedown', function(event) {
+    if (event.buttons == 1) {
+        create.neutron(x, y, getRandomArbitrary(-2, 2), getRandomArbitrary(-2, 2));
+    }
+    else if (event.buttons == 2) {
+        mouseGravity = true;
+    }
 })
 
 function getRandomInt(max) {
