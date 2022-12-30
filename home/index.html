@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>NuoSite</title>
-        <link rel="stylesheet" href="/home/default.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Universe</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="page">
-            <header>
-                
-            </header>
+        <div class="canvas-div">
+            <canvas width="800" height="800" id="canvas"></canvas>
+            <p>To create neutron press <b>Mouse Button</b>.</p>
         </div>
+        <div class="particles">
+            <h2 id="neutrons"></h2>
+            <h2 id="protons"></h2>
+            <h2 id="electrons"></h2>
+        </div>
+        <div class="atoms">
+            <div class="hidrogen">
+                <h2 id="hidrogen"></h2>
+                <h2 id="deuterium"></h2>
+                <h2 id="tritium"></h2>
+            </div>
+            <div class="helium">
+                <h2 id="helium"></h2>
+            </div>
+            <div class="beryllium">
+                <h2 id="beryllium"></h2>
+            </div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
