@@ -69,6 +69,11 @@ let y;
 
 let mass = 0;
 
+let scale = 1;
+
+let cameraX = 0;
+let cameraY = 0;
+
 // Характеристики частицы:
     // 0, 1 - координаты
     // 2, 3 - скорость
@@ -113,7 +118,7 @@ let deleteObject = new DeleteObject();
 
 if (bigBang) {
     for (let i = 0; i < startParticles; i++) {
-        create.neutron(canvas.width / 2, canvas.height / 2, 0, 0);
+        create.neutron(0, 0, 0, 0);
     }
 }
 
@@ -164,6 +169,8 @@ function draw() {
     particlesMovement();
     atomsMovement();
 
+    console.log(cameraX)
+
     neutronsText.innerHTML = `Neutrons: ${neutrons}`;
     protonsText.innerHTML = `Protons: ${protons}`;
     electronsText.innerHTML = `Electrons: ${electrons}`;
@@ -191,22 +198,22 @@ function particlesMovement() {
         else if (e[4] == -1) {
             ctx.fillStyle = electronColor;
         }
-        ctx.fillRect(e[0], e[1], 2, 2);
+        ctx.fillRect((e[0] - cameraX) / scale + canvas.width / 2, (e[1] - cameraY) / scale + canvas.height / 2, 2, 2);
         e[0] += e[2];
         e[1] += e[3];
 
-        if (e[0] > canvas.width) {
-            e[0] = 0;
-        }
-        if (e[1] > canvas.height) {
-            e[1] = 0;
-        }
-        if (e[0] < 0) {
-            e[0] = canvas.width;
-        }
-        if (e[1] < 0) {
-            e[1] = canvas.height;
-        }
+        // if (e[0] > canvas.width) {
+        //     e[0] = 0;
+        // }
+        // if (e[1] > canvas.height) {
+        //     e[1] = 0;
+        // }
+        // if (e[0] < 0) {
+        //     e[0] = canvas.width;
+        // }
+        // if (e[1] < 0) {
+        //     e[1] = canvas.height;
+        // }
 
         if (e[4] == 0 && e[5] >= e[6]) {
             create.proton(e[0] + 5, e[1], e[2], e[3]);
@@ -231,6 +238,17 @@ function particlesMovement() {
             // Кулоновское взаимодействие
             if (distance >= 1) {
                 force = 10 * -e[4] * object[4] / (distance ** 2);
+
+                sin = (e[1] - object[1]) / distance;
+                cos = (e[0] - object[0]) / distance;
+                e[3] -= sin * force;
+                e[2] -= cos * force;
+            }
+
+            if (distance > 20) {
+                // Гравитационное взаимодействие
+
+                force = 1 / (distance ** 2)
 
                 sin = (e[1] - object[1]) / distance;
                 cos = (e[0] - object[0]) / distance;
@@ -280,24 +298,24 @@ function atomsMovement() {
         heliumText.style.color = '#F4C271';
         
         ctx.beginPath();
-        ctx.arc(e[0], e[1], e[4], 0, 2 * Math.PI, false);
+        ctx.arc(e[0] / scale + canvas.width / 2 - cameraX, e[1] / scale + canvas.width / 2 - cameraY, e[4], 0, 2 * Math.PI, false);
         ctx.fill();
 
         e[0] += e[2];
         e[1] += e[3];
 
-        if (e[0] > canvas.width) {
-            e[0] = 0;
-        }
-        if (e[1] > canvas.height) {
-            e[1] = 0;
-        }
-        if (e[0] < 0) {
-            e[0] = canvas.width;
-        }
-        if (e[1] < 0) {
-            e[1] = canvas.height;
-        }
+        // if (e[0] > canvas.width) {
+        //     e[0] = 0;
+        // }
+        // if (e[1] > canvas.height) {
+        //     e[1] = 0;
+        // }
+        // if (e[0] < 0) {
+        //     e[0] = canvas.width;
+        // }
+        // if (e[1] < 0) {
+        //     e[1] = canvas.height;
+        // }
 
         if (e[4] == 1 && e[5] == 1) {
             hidrogen += 1;
@@ -384,12 +402,43 @@ document.addEventListener('keydown', function (event) {
             e[3] *= -1;
         });
     }
+    else if (event.key == 'g') {
+        scale *= 1.2;
+    }
+    else if (event.key == 'h') {
+        scale /= 1.2;
+    }
+    else if (event.key == 'w') {
+        cameraY -= 100 * scale;
+    }
+    else if (event.key == 'a') {
+        cameraX -= 100 * scale;
+    }
+    else if (event.key == 's') {
+        cameraY += 100 * scale;
+    }
+    else if (event.key == 'd') {
+        cameraX += 100 * scale;
+    }
+    else if (event.key == 'h') {
+        scale -= 1;
+    }
+    console.log(event)
 })
 
 canvas.addEventListener('mousemove', function(event) {
     const rect = canvas.getBoundingClientRect();
     x = event.clientX - rect.left;
     y = event.clientY - rect.top;
+})
+
+document.addEventListener('wheel', function(event) {
+    if (event.deltaY <= 0) {
+        scale *= 1.2;
+    }
+    else {
+        scale /= 1.2;
+    }
 })
 
 canvas.addEventListener('mousedown', function(event) {
