@@ -1,0 +1,19 @@
+body {
+    display: inline-flex;
+    background-color: black;
+
+    color: white;
+
+    position: fixed;
+    margin: 0px;
+}
+
+canvas {
+    /* border: 1px solid white; */
+}
+
+.info {
+    position:absolute;
+    z-index:9999;
+    width: 100%;
+}
