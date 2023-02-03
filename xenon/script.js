@@ -50,19 +50,8 @@ function openFile(input) {
 
 function saveFile() {
     var data = textField.innerHTML;
-    let data2 = "";
-    // console.log(data);
 
-    while (data.replace("<div>", "") != data) {
-        data = data.replace("<div>", "");
-    }
-    while (data.replace("</div>", "\n") != data) {
-        data = data.replace("</div>", "\n");
-    }
-    while (data.replace("&nbsp;", " ") != data) {
-        data = data.replace("&nbsp;", " ");
-    }
-    console.log(data);
+  data = htmlToText(data);
 
     var a = document.getElementById("linkForSavingFiles");
     var file = new Blob([data], {
@@ -72,3 +61,24 @@ function saveFile() {
     a.download = 'file.txt';
     a.click();
 }
+
+function htmlToText(data) {
+  while (data.replace("<div>", "") != data) {
+    data = data.replace("<div>", "");
+  }
+  while (data.replace("</div>", "\n") != data) {
+      data = data.replace("</div>", "\n");
+  }
+  while (data.replace("&nbsp;", " ") != data) {
+      data = data.replace("&nbsp;", " ");
+  }
+  data = data.replace("<br>", "");
+  // console.log(data);
+  return data
+}
+
+document.addEventListener("keyup", function() {
+  let text = htmlToText(textField.innerHTML);
+
+  
+});
