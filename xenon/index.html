@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Xenon</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/style.css">
+    </head>
+
+    <body spellcheck="false">
+        <div class="up-menu">
+            <label>
+                <input type="file" id="file-open" onchange="openFile(this);">
+                Open
+            </label>
+            <label>
+                <button onclick='saveFile()'>Save</button>
+                <a href='' id='linkForSavingFiles' style='display:none'></a>
+            </label>
+        </div>
+        <div class="text">
+            <div class="text-field" contenteditable="true" onchange="console.log('???');" id="text-field"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

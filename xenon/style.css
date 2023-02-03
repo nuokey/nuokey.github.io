@@ -1,0 +1,68 @@
+body {
+    background-color: #1C1C1C;
+
+    font-family: monospace;
+
+    font-size: 16px;
+    position: fixed;
+}
+
+.text {
+    padding: 0;
+    
+}
+
+.text-field {
+    overflow: scroll;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    border: 0px;
+
+    background-color: #1C1C1C;
+
+    color: white;
+
+    outline:none;
+}
+
+.up-menu {
+    color: #21E8E3;
+}
+
+.up-menu input {
+    display: none;
+    
+}
+
+.up-menu label {
+    cursor: pointer;
+}
+
+.up-menu button  {
+    color: #21E8E3;
+    font-family: monospace;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    background-color: #1C1C1C;
+
+    border: 0px;
+}
+
+body {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "up-menu"
+      "text";
+  }
+  
+  .up-menu { grid-area: up-menu; }
+  
+  .text { grid-area: text; }
+  
