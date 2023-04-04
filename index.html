@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <button onclick="requestCards()">Сгенерировать карту</button>
-        <div class="imgs">
-            <div class="player-div">
-                <h1>Игрок:</h1>
-                <div class="player"></div>
-            </div>
-            <div class="ai-div">
-                <h1>Компьютер:</h1>
-                <div class="ai"></div>
-            </div>
-            <div class="result"></div>
-        </div>
+        <h2 class="points"></h2>
+        <button onclick="takeCard();">Взять карту</button>
+        <button onclick="stopTaking();">Завершить добор</button>
+        <div class="player-imgs"></div>
+        <h2 class="result"></h2>
+        <h2 class="computer-points"></h2>
+        <div class="computer-imgs"></div>
         <script src="script.js"></script>
     </body>
 </html>
