@@ -24,7 +24,12 @@ async function takeCard() {
         playerPoints += 10;
     }
     else if (cardsJSON.cards[0].value == "ACE") {
-        playerPoints += 1;
+        if (playerPoints + 11 > 21) {
+            playerPoints += 1
+        }
+        else {
+            playerPoints += 11;
+        }
     }
     else {
         playerPoints += parseFloat(cardsJSON.cards[0].value);
