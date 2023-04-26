@@ -1,0 +1,24 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.weather {
+    text-align: center;
+}
+
+
+.weather {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "city-1 city-2 city-3";
+  }
+  
+  .city-1 { grid-area: city-1; }
+  
+  .city-2 { grid-area: city-2; }
+  
+  .city-3 { grid-area: city-3; }
+  
