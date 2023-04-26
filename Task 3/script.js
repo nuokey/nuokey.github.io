@@ -39,8 +39,6 @@ request.onload = function () {
 
 request.send(null);
 
-// requestNumber();
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
